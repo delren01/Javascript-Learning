@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Variable G</title>
+    </head>
+    <body>
+        <script>
+            /* Unary plus (+) applied to a single value, doesn't do 
+            anything to numbers. But if the operand is not a number,
+            the unary plus converts it into a number */
+            // no effects on numbers
+            let x = 1;
+            console.log( +x ); // 1
+            
+            let y = -2;
+            console.log( +x ); // -2
+
+            // converts non-numbers
+            console.log( +true ); // 1
+            console.log( +"" ); // 
+
+            /*The need to convert strings to numbers arises very often. For example, if you are getting values from HTML form fields, they are usually strings. What if you want to sum them? */
+            let apples = "2";
+            let oranges = "3";
+            alert( apples + oranges ); // 23
+
+            /*If you want to treat them as numbers, you need to convert and then sum them: */
+            let apple = "2";
+            let orange = "3";
+            // both values converted to numbers before the binary plus
+            alert( +apples + +oranges ); //5
+            // the longer variant
+            // alert( Number(apples) + Number(oranges) ); // 5
+        </script>
+    </body>
+</html>

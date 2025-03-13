@@ -1,0 +1,203 @@
+:root {
+    --main-color: #ff5678;
+    --secondary-color: #ff304f;
+    --heart-size: 20px;
+}
+
+body {
+    background: #ffc3da;
+    font-family: "Comic Sans MS", sans-serif;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.envelope-wrapper {
+    height: 200px;
+}
+
+#envelope {
+    position: relative;
+    height: 180px;
+    width: 280px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin: auto;
+    top: 50%;
+    background-color: #FF6863;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease-in-out;
+}
+
+#envelope:hover {
+    cursor: pointer;
+}
+
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+}
+
+.flap {
+    border-top: 98px solid #FF6863;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 82px solid transparent;
+    transform-origin: top;
+    transition: transform 0.4s ease-in-out;
+}
+
+.pocket {
+    border-left: 140px solid #FF8BA0;
+    border-right: 140px solid #FF8BA0;
+    border-bottom: 90px solid #FFA8B5;
+    border-top: 90px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* ✅ Fix: Letter is hidden initially */
+.letter {
+    position: relative;
+    background-color: white;
+    width: 90%;
+    height: 95%;
+    top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 2px 26px rgba(0,0,0, .12);
+    margin: auto;
+    opacity: 0;  /* Hidden initially */
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ✅ Fix: Letter appears only when the envelope is opened */
+.open .letter {
+    transform: translateY(-80px);
+    opacity: 1;
+}
+
+.close .letter {
+    transform: translateY(0);
+    opacity: 0;
+}
+
+.words {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 14%;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.line1 { top: 2%; }
+.line2 { top: 15%; }
+.line3 { top: 40%; text-align: center; }
+.line4 { top: 55%; text-align: center; }
+
+/* ✅ Fix: Flap transitions properly */
+.open .flap {
+    transform: rotateX(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: -1;
+}
+
+.close .flap {
+    transform: rotateX(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+
+/* ✅ Fix: Envelope closes properly */
+.open .letter {
+    transform: translateY(-80px);
+    opacity: 1;
+}
+
+.close .letter {
+    transform: translateY(0);
+    opacity: 0;
+}
+
+/* Reset button styling */
+.reset {
+    text-align: center;
+}
+
+.reset button {
+    font-weight: 800;
+    background-color: transparent;
+    border: solid 2px #FF6863;
+    border-radius: 4px;
+    color: #FF6863;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 20px;
+    margin-top: 100px;
+    padding: 10px;
+    line-height: 2em;
+    min-width: 150px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.reset button:hover {
+    background-color: #FF6863;
+    cursor: pointer;
+    color: white;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+/* Message fading effect */
+#message {
+    font-size: 2em;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+/* ❤️ Heart animation */
+.heart {
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    background: red;
+    transform: rotate(45deg);
+    animation: fall 2.5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: var(--heart-size);
+    height: var(--heart-size);
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { top: 0; left: -10px; }
+
+@keyframes fall {
+    0% { top: -50px; opacity: 1; }
+    100% { top: 100vh; opacity: 0; transform: rotate(90deg); }
+}
+
+@keyframes slideUp {
+    0% { top: 0; }
+    100% { top: -600px; }
+}
+
+@keyframes sideSway {
+    0% { margin-left: 0px; }
+    100% { margin-left: 50px; }
+}

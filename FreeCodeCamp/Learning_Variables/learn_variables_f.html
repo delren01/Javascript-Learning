@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Learn Variables F</title>
+</head>
+<body>
+    <script>
+        let s = "my" + "string";
+        console.log(s); // output - mystring
+        console.log(s + '2'); // '12'
+        console.log('1' + 2); // '12'
+        // complex example:
+        console.log(2 + 2 + '1'); // '41' and not 221
+        // here, the first + concactenates the string and the number, so it returns 12,
+        // then next + adds 2 to it, so it's like '12' + 2 = '122'
+        console.log('1' + 2 + 2 ); // '122' and not 14
+
+        // for subtraction and division: it's normal
+        console.log(6 - '2'); // 4, converts '2' to a number
+        console.log('6' / '2'); // 3, converts both operands to numbers
+    </script>
+</body>
+</html>
