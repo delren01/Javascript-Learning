@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            "use strict";
+            let a = 2 + 2;
+            // switch starts to compare a from the first case variant that is 3. match fails.
+            // then 4, that's a match so execution starts from case 4 until the nearest break.
+            // NOTE: if there's no break, execution continues with the next case without any checks
+            switch (a) {
+                case 3:
+                    alert('Too small');
+                    break;
+                case 4:
+                    alert("Exactly");
+                    break;
+                case 5:
+                    alert("Too big");
+                    break;
+                default:
+                    alert("I don't know such values");
+            }
+
+            // an example without breaks
+            // in this execution, we get three alerts starting from Case 4 up to default
+            let b = 2 + 2;
+            switch (b) {
+                case 3:
+                    alert("Too small");
+                case 4:
+                    alert("Exactly!")
+                case 5:
+                    alert("Too big");
+                default:
+                    alert("I don't know such values");
+            }
+        </script>
+    </body>
+</html>

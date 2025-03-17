@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            "use strict";
+
+            for(let i = 0; i < 10; i++) {
+                // if true, skip the remaining part of the body
+                if (i % 2 == 0) continue;
+                alert(i); // 1, then, 3,5,7,9
+            }
+
+            // for even values of i, continue stops executing the body and passes ctrl to the next iteration of for(with the next number). so the alert is only called for odd values
+
+            // the continue directive helps decrease nesting
+            // for(let i = 0; i < 10; i++) {
+            //     if(i % 2) {
+            //         alert(i);
+            //     }
+            // }
+        </script>
+    </body>
+</html>

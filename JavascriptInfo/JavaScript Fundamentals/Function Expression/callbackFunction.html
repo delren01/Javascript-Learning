@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // function should ask the question and, depending on user's answer, call yes() or no()
+            function ask(question, yes, no) {
+                if(confirm(question)) yes() 
+                else no();
+            }
+             function showOk() {
+                alert("You agreed");
+             }
+             function showCancel() {
+                alert("You canceled the execution.");
+             }
+
+             // usage: functions showOk, showCancel are passed as arguments to ask
+             // arguments showOk and showCancel of 'ask' are called 'callback functions' or just callbacks
+             // idea is we pass a function and expect it to be 'called back' later if needed.
+             // in our case, showOk becomes callback for parameter 'yes' answer, and showCancel for paramter 'no' answer.
+             alert("Do you agree?", showOk, showCancel);
+        </script>
+    </body>
+</html>

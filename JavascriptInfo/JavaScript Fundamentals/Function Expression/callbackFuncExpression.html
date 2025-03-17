@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // we can use Function Expression to write an equivalent, shorter function:
+            function ask(question, yes, no) {
+                if(confirm(question)) yes()
+                else no();
+            }
+
+            // here, function are declared inside the 'ask() call. they have no name, and so are called anonymous'
+            // such functions are not accessible outside of 'ask(), but that's what we want in this case
+            ask(
+                "Do you agree?",
+                function() { alert("You agreed."); },
+                function() { alert("You canceled the execution."); }
+            );
+        </script>
+    </body>
+</html>

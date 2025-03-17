@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // arrow functions are Function Expressions, so doing this way would prevent ask from being declared prior to the code block running
+
+            /*let ask = (question, yes, no) => {
+                if(confirm(question)) yes();
+                else no();
+            }*/
+           function ask(question, yes, no) {
+            if(confirm(question)) yes();
+            else no();
+           }
+
+            ask(
+                "Do you agree?",
+                () => { alert("You agreed."); },
+                () => { alert("You canceled"); }
+            );
+        </script>
+    </body>
+</html>

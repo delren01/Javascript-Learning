@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function sayHi() { // 1. Create (Function declaration)
+                alert("Hello");
+            }
+
+            let func = sayHi; // 2. Copy ()
+            func(); // Hello   3. Run the copy (it works)
+            sayHi(); // Hello  4. this still works too
+
+            // we could also have used a Function Expression to declare sayHi(), in the first line
+            // let sayHi = function() { 1. Create
+            //      alert("Hello");
+            //};
+            // let func = sayHi; 2. Everything would work the same as above codes
+        </script>
+    </body>
+</html>

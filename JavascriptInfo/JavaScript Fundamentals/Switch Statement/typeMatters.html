@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            "use script";
+
+            let arg = prompt("Enter a value?");
+            
+            switch(arg) {
+                // for 0 and 1, the first alert runs
+                case '0':
+                case '1':
+                    alert("One or zero");
+                    break;
+                // for 2, the second alert runs
+                case '2':
+                    alert("Two");
+                    break;
+                // for 3, result of prompt is a string "3", which isn't strictly equal to the number 3.
+                // so we've got a dead code in case 3!. The default variant will execute
+                case '3': 
+                    alert("Never executes!");
+                    break;
+                default: 
+                    alert("An unknown value");
+            }
+        </script>
+    </body>
+</html>

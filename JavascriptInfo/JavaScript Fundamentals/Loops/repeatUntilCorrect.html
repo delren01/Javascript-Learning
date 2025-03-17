@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            "use strict";
+            // // ask user for a number greater than 100
+            // let num = prompt("Enter a number greater than 100?", "");
+            // // if visitor enters another number - ask again using while loop
+            // while(num < 100) {
+            //     if(num > 100 || num == "") {
+            //         break;
+            //     } else {
+            //         num = prompt("Enter a number greater than 100?", "");
+            //     }
+            // }
+
+            // SOLUTION:
+            let num;
+
+            do {
+                num = prompt("Enter a number greater than 100?", "");
+            } while(num <= 100 && num);
+        </script>
+    </body>
+</html>

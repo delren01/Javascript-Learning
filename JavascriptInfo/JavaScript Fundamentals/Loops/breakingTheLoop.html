@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            // we can use the break special directive to exit a loop
+            "use strict";
+            let sum = 0;
+             
+            while(true) {
+
+                let value = +prompt("Enter a number: ", "");
+                
+                if(!value) break; // break directive is activated here if users enter empty line or cancels
+                
+                sum += value;
+            }
+
+            alert(`Sum : ${sum}`);
+        </script>
+    </body>
+</html>

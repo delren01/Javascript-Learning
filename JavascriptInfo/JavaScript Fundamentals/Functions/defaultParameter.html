@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            "use strict";
+            // parameter 'text' has a DEFAULT value of 'no text given' if text is not provided as argument
+            function showMessage(from, text = 'no text given') {
+                alert(from + ": " + text);  
+            }
+            showMessage("Ann");
+            // the default also jumps in if the parameter exists, but strictly equals 'undefined' like this
+            // showMessage("Ann", undefined); // outputs to Ann: no text given
+
+            // another way is a complex expression, which is only evaluated and assigned if parameter
+            // is missing. This is also possible:
+            // function showMessage(from, text = anotherFunction()) {
+            //  anotherFunction() only executed if no text is given as an argument
+            //  its result becomes the value of the text
+            //}
+        </script>
+    </body>
+</html>

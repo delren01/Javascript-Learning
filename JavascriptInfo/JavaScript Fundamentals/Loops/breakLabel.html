@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            "use strict";
+            // outer is just a label, we could name it anything
+            outer: for(let i = 0; i < 3; i++) {
+                for(let j = 0; j < 3; j++) {
+
+                    let input = prompt(`Value at coords (${i}, ${j})`, "");
+
+                    // if an empty string or canceled, then break out of both loops
+                    if(!input) break outer; // looks upwards for the label named outer and breaks loop.
+
+                    // do something with the value
+                }
+            }
+            alert("Done!");
+
+            // NOTE: we can also move the label onto a separate line:
+            // outer:
+            // for(let i 0; i < 3; i++) {...}
+        </script>
+    </body>
+</html>
